@@ -4,8 +4,8 @@ metadata:
   name: coordinates-api-svc
   labels:
     app: coordinates-api
-  type: NodePort
 spec:
+  type: NodePort
   ports:
   - port: 8000
     targetPort: 8000

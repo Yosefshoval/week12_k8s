@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: coordinates-api
@@ -12,18 +12,18 @@ spec:
   template:
     metadata:
       labels:
-        app: redis
+        app: coordinates-api
     spec:
       containers:
       - name: coordinates-api
-        image: yosefshoval/coordinates-api
+        image: yosefshoval/coordinates_api:v1
         ports:
         - containerPort: 8000
         env:
         - name: POSTGRES_HOST
-          value: postgres
+          value: postgres-0.postgres-svc
         - name: POSTGRES_PORT
-          value: 5432
+          value: "5432"
         - name: POSTGRES_DB
           value: coordinates_db
         - name: POSTGRES_USER

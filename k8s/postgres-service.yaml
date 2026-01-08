@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: postgres-svc
   labels:
-    app: postgres-svc
+    app: postgres #-svc
 spec:
   ports:
     - port: 5432
